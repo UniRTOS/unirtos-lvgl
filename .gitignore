@@ -1,3 +1,2 @@
-/qos_build/
-/*.code-workspace
-
+qos_build/
+*.code-workspace

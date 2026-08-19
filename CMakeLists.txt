@@ -27,5 +27,12 @@ target_include_directories(${target} PUBLIC
     ${LVGL_DIR}
 )
 target_compile_definitions(${target} PUBLIC LV_CONF_INCLUDE_SIMPLE)
+# External libraries are configured before the application target and do not
+# inherit its architecture flags.  EG800Z runs Cortex-M3 Thumb code only.
+target_compile_options(${target} PRIVATE
+    -mcpu=cortex-m3
+    -mthumb
+    -mapcs-frame
+)
 target_sources(${target} PRIVATE ${LVGL_SRC})
 

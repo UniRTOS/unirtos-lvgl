@@ -19,3 +19,7 @@ Applications consume it through `env_config.json`:
 Run `unirtos-cli env-setup` before `unirtos-cli build`. The SDK compiles this
 library and links it only into applications that declare the dependency.
 
+The library explicitly compiles every LVGL source file as Cortex-M3 Thumb
+code. It does not include LCD drivers, GPIO configuration, display ports or
+application tasks; those stay in a demo or product application repository.
+
